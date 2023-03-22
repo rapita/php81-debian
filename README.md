@@ -1,6 +1,6 @@
-# Docker PHP 8.2 Debian (11.4 bullseye)
+# Docker PHP 8.1 Debian (11.4 bullseye)
 
-This docker image with PHP 8.2 based on Debian Linux. This image contains extensions needed for own projects (amqp, ~~grpc~~, mysql, pgsql, redis, rdkafka).
+This docker image with PHP 8.1 based on Debian Linux. This image contains extensions needed for own projects (amqp, ~~grpc~~, mysql, pgsql, redis, rdkafka).
 
 Requirements for container based on this image:
 * The container must be tight and do only one job. For example, run web server by roadrunner, run consuming queue or message broker.

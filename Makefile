@@ -1,5 +1,5 @@
 IMAGE_TAG   ?= v0.0.2
-IMAGE_NAME  ?= php82-debian
+IMAGE_NAME  ?= php81-debian
 VENDOR_NAME  = rapita
 
 DIR = $(notdir $(shell pwd))
