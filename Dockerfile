@@ -1,8 +1,8 @@
 # See: <https://roadrunner.dev/docs/intro-install>
-FROM spiralscout/roadrunner:2.10.7 as roadrunner
+FROM spiralscout/roadrunner:2.12.3 as roadrunner
 # See: <https://github.com/mlocati/docker-php-extension-installer>
 FROM mlocati/php-extension-installer:latest as php-extension-installer
-FROM php:8.1.8-bullseye
+FROM php:8.2.4-bullseye
 
 COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
@@ -28,6 +28,12 @@ RUN install-php-extensions \
         zip \
         xdebug-^3.1 \
         @composer-^2
+
+# Install additional packages
+RUN apt-get update \
+    && apt-get install -y  \
+      git; \
+	rm -rf /var/lib/apt/lists/*
 
 COPY php.ini /usr/local/etc/php/php.ini
 
